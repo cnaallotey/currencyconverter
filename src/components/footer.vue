@@ -10,11 +10,11 @@
         <p>Follow Me 👍</p>
         <div class="flex ml-4">
           <img src="../assets/github2.svg" class="w-16 h-16 p-3" alt="github" />
-          <img
-            src="../assets/linkedin (2).svg"
+          <img src="../assets/linkedin.svg" class="w-16 h-16 p-3" alt="linkedin" /><img
+            src="../assets/twitter (6).svg"
             class="w-16 h-16 p-3"
-            alt="linkedin"
-          /><img src="../assets/twitter (6).svg" class="w-16 h-16 p-3" alt="twitter" />
+            alt="twitter"
+          />
         </div>
       </div>
     </div>

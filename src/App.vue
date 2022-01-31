@@ -5,19 +5,22 @@
 import navbar from "../src/components/navbar.vue";
 import hero from "../src/components/hero.vue";
 import foooter from "../src/components/footer.vue";
+import converter from "../src/components/converter.vue";
 
 export default {
   components: {
     navbar,
     hero,
     foooter,
+    converter,
   },
 };
 </script>
 
 <template>
   <navbar />
-  <hero />
+  <hero class="relative z-0" />
+  <converter class="relative z-20 -mt-20" />
   <foooter />
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <footer class="w-full py-10">
+  <footer class="w-full py-10 mt-20">
     <div
       class="max-w-screen-xl mx-auto flex flex-col lg:flex-row justify-between px-5 md:px-10 xl:px-0"
     >

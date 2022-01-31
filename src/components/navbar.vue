@@ -8,9 +8,13 @@ export default {};
       class="max-w-screen-xl mx-auto flex justify-between items-center px-5 md:px-10 xl:px-0"
     >
       <div>
-        <h2 class="font-extrabold text-xl uppercase text-white">Currency converter</h2>
+        <h2
+          class="font-extrabold text-xl uppercase text-white cursor-pointer select-none"
+        >
+          Currency converter
+        </h2>
       </div>
-      <div class="flex items-center">
+      <div class="flex items-center cursor-pointer">
         <img src="../assets/github.svg" class="w-8 h-8 mr-2" alt="github" />
         <p class="text-base font-medium text-white tracking-normal hidden md:contents">
           View Repo

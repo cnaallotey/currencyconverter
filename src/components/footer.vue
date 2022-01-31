@@ -1,6 +1,8 @@
 <template>
   <footer class="w-full py-10">
-    <div class="max-w-screen-xl mx-auto flex justify-between">
+    <div
+      class="max-w-screen-xl mx-auto flex flex-col lg:flex-row justify-between px-5 md:px-10 xl:px-0"
+    >
       <p class="text-slate-900 text-base font-normal tracking-normal">
         2022 UX Geek Inc. Made with ❤️ by Charles Ni Adotey Allotey
       </p>

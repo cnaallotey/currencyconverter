@@ -71,7 +71,7 @@ export default {
   created() {
     axios
       .get(
-        "http://api.exchangeratesapi.io/v1/latest?access_key=95da933ac74de657c8df46d5bba8597f&symbols=USD,AUD,CAD,PLN,MXN"
+        "https://api.exchangeratesapi.io/v1/latest?access_key=95da933ac74de657c8df46d5bba8597f&symbols=USD,AUD,CAD,PLN,MXN"
       )
       .then((response) => (this.rates = response.data.rates));
   },

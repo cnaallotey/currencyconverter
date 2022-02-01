@@ -71,9 +71,9 @@ export default {
   created() {
     axios
       .get(
-        "http://api.exchangeratesapi.io/v1/latest?access_key=95da933ac74de657c8df46d5bba8597f&symbols=USD,AUD,CAD,PLN,MXN"
+        "https://freecurrencyapi.net/api/v2/latest?apikey=3da85ea0-838f-11ec-85e1-1bfef815d72a&base_currency=GHS"
       )
-      .then((response) => (this.rates = response.data.rates));
+      .then((response) => (this.rates = response.data.data));
   },
   computed: {
     getPounds() {},

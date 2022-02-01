@@ -9,7 +9,7 @@
           type="number"
           name="convert from"
           id=""
-          value="1"
+          v-model="capital"
           class="border-b-2 p-3 border-gray-200 focus:outline-none"
         />
         <select
@@ -47,7 +47,7 @@
             {{ currency }}
           </option>
         </select>
-        <p class="text-4xl">{{ converted }}</p>
+        <p class="text-4xl">{{ getConversion }}</p>
       </div>
     </div>
   </div>
@@ -61,8 +61,11 @@ export default {
     return {
       currencies: [],
       converted: "",
+      rate: "",
+      capital: 1,
     };
   },
+  methods: {},
 
   created() {
     axios
@@ -71,8 +74,13 @@ export default {
       )
       .then((response) => {
         this.currencies = Object.getOwnPropertyNames(response.data.data);
-        this.converted = response.data.data.USD;
+        this.rate = response.data.data.USD;
       });
+  },
+  computed: {
+    getConversion() {
+      return Math.round((this.rate * this.capital + Number.EPSILON) * 100) / 100;
+    },
   },
 };
 </script>

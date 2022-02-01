@@ -4,7 +4,7 @@
   >
     <div class="w-full lg:w-2/5 border-2 rounded-xl h-max p-5">
       <p>Convert</p>
-      <div class="flex mt-5">
+      <div class="flex flex-col md:flex-row mt-5">
         <input
           type="number"
           name="convert from"
@@ -14,7 +14,7 @@
         />
         <select
           name="Currency"
-          class="text-xl text-gray-900 p-3 focus:outline-none"
+          class="text-xl text-gray-900 p-3 focus:outline-none mt-5 md:mt-0"
           id=""
         >
           <option value="GHS">GHS</option>
@@ -32,7 +32,7 @@
     <img src="../assets/transfer-arrow.svg" class="w-12 h-12" alt="transfer" />
     <div class="w-full lg:w-2/5 border-2 rounded-xl h-max p-5">
       <p>To</p>
-      <div class="flex justify-between mt-5">
+      <div class="flex flex-col md:flex-row justify-between mt-5">
         <select
           name="Currency"
           class="text-xl text-gray-900 p-3 focus:outline-none"
@@ -47,7 +47,7 @@
             {{ currency }}
           </option>
         </select>
-        <p class="text-4xl">{{ getConversion }}</p>
+        <p class="text-4xl mt-5 md:mt-0">{{ getConversion }}</p>
       </div>
     </div>
   </div>

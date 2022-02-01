@@ -1,6 +1,6 @@
 <template>
   <div
-    class="max-w-screen-lg lg:mx-auto bg-white shadow-xl h-60 rounded-2xl mx-5 px-10 flex items-center justify-between p-5"
+    class="max-w-screen-lg lg:mx-auto bg-white shadow-xl lg:h-60 rounded-2xl mx-5 px-10 py-10 flex flex-col lg:flex-row space-y-5 items-center justify-between p-5"
   >
     <div class="w-full lg:w-2/5 border-2 rounded-xl h-max p-5">
       <p>Convert</p>
@@ -17,8 +17,15 @@
           class="text-xl text-gray-900 p-3 focus:outline-none"
           id=""
         >
-          <option value="GBP" class="p-3 mb-3">GBP</option>
-          <option value="CAD" class="p-3">CAD</option>
+          <option value="GHS">GHS</option>
+          <option
+            v-for="currency in currencies"
+            :key="currency"
+            :value="currency"
+            class="p-3 mb-3"
+          >
+            {{ currency }}
+          </option>
         </select>
       </div>
     </div>
@@ -31,11 +38,41 @@
           class="text-xl text-gray-900 p-3 focus:outline-none"
           id=""
         >
-          <option value="GBP" class="p-3 mb-3">GBP</option>
-          <option value="CAD" class="p-3">CAD</option>
+          <option
+            v-for="currency in currencies"
+            :key="currency"
+            :value="currency"
+            class="p-3 mb-3"
+          >
+            {{ currency }}
+          </option>
         </select>
-        <p class="text-4xl">1000</p>
+        <p class="text-4xl">{{ converted }}</p>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+import axios from "axios";
+
+export default {
+  data() {
+    return {
+      currencies: [],
+      converted: "",
+    };
+  },
+
+  created() {
+    axios
+      .get(
+        "https://freecurrencyapi.net/api/v2/latest?apikey=3da85ea0-838f-11ec-85e1-1bfef815d72a&base_currency=GHS"
+      )
+      .then((response) => {
+        this.currencies = Object.getOwnPropertyNames(response.data.data);
+        this.converted = response.data.data.USD;
+      });
+  },
+};
+</script>

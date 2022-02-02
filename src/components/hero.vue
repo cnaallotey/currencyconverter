@@ -26,19 +26,19 @@
             <div class="w-full lg:w-auto">
               <div class="p-3 w-40 mx-auto bg-white rounded-xl shadow-2xl">
                 <div class="flex items-center justify-between">
-                  <p class="text-sm font-medium text-gray-500">AUD</p>
-                  <img class="h-6 w-6" src="../assets/australia.svg" />
+                  <p class="text-sm font-medium text-gray-500">EUR</p>
+                  <img class="h-6 w-6" src="../assets/european-union.svg" />
                 </div>
-                <p class="text-2xl font-semibold mt-1">{{ rates.AUD }}</p>
+                <p class="text-2xl font-semibold mt-1">{{ rates.EUR }}</p>
               </div>
             </div>
             <div class="w-full lg:w-auto">
               <div class="p-3 w-40 mx-auto bg-white rounded-xl shadow-2xl">
                 <div class="flex items-center justify-between">
-                  <p class="text-sm font-medium text-gray-500">PLN</p>
-                  <img class="h-6 w-6" src="../assets/poland.svg" />
+                  <p class="text-sm font-medium text-gray-500">BTC</p>
+                  <img class="h-6 w-6" src="../assets/btc.svg" />
                 </div>
-                <p class="text-2xl font-semibold mt-1">{{ rates.PLN }}</p>
+                <p class="text-2xl font-semibold mt-1">{{ rates.BTC }}</p>
               </div>
             </div>
           </div>

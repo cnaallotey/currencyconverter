@@ -1,6 +1,6 @@
 <template>
   <div
-    class="max-w-screen-lg lg:mx-auto bg-white shadow-xl lg:h-auto rounded-2xl mx-5 px-10 py-10 p-5"
+    class="max-w-screen-lg lg:mx-auto bg-white shadow-xl lg:h-auto rounded-2xl mx-5 px-5 lg:px-10 py-10 p-5"
   >
     <div
       class="w-full flex flex-col lg:flex-row space-y-5 lg:space-y-0 items-center justify-between"

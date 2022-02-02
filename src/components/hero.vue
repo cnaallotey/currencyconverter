@@ -45,10 +45,10 @@
           <div class="w-full">
             <div class="p-3 w-40 mx-auto bg-white rounded-xl shadow-2xl">
               <div class="flex items-center justify-between">
-                <p class="text-sm font-medium text-gray-500">CAD</p>
-                <img class="h-6 w-6" src="../assets/canada.svg" />
+                <p class="text-sm font-medium text-gray-500">GBP</p>
+                <img class="h-6 w-6" src="../assets/great-britain-flag.svg" />
               </div>
-              <p class="text-2xl font-semibold mt-1">{{ rates.CAD }}</p>
+              <p class="text-2xl font-semibold mt-1">{{ rates.GBP }}</p>
             </div>
           </div>
         </div>

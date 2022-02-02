@@ -9,14 +9,44 @@
       <div class="flex items-center">
         <p>Follow Me 👍</p>
         <div class="flex ml-4">
-          <img src="../assets/github2.svg" class="w-16 h-16 p-3" alt="github" />
-          <img src="../assets/linkedin.svg" class="w-16 h-16 p-3" alt="linkedin" /><img
+          <img
+            src="../assets/github2.svg"
+            class="w-16 h-16 p-3"
+            alt="github"
+            @click="github()"
+          />
+          <img
+            src="../assets/linkedin.svg"
+            class="w-16 h-16 p-3"
+            alt="linkedin"
+            @click="linkedin()"
+          /><img
             src="../assets/twitter.svg"
             class="w-16 h-16 p-3"
             alt="twitter"
+            @click="twitter()"
           />
         </div>
       </div>
     </div>
   </footer>
 </template>
+
+<script>
+export default {
+  data() {
+    return {};
+  },
+  methods: {
+    github: function () {
+      window.open("https://www.github.com/cnaallotey", "_blank");
+    },
+    linkedin: function () {
+      window.open("www.linkedin.com/in/charles-allotey-633338116", "_blank");
+    },
+    twitter: function () {
+      window.open("https://twitter.com/adotey_", "_blank");
+    },
+  },
+};
+</script>

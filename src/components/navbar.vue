@@ -1,7 +1,3 @@
-<script>
-export default {};
-</script>
-
 <template>
   <nav class="w-full bg-slate-900 py-8">
     <div
@@ -14,7 +10,10 @@ export default {};
           Currency converter
         </h2>
       </div>
-      <div class="flex items-center cursor-pointer">
+      <div
+        class="flex items-center cursor-pointer bg-black p-3 bg-opacity-0 rounded-lg hover:bg-opacity-20 transform transition delay-200 ease-in-out"
+        @click="repo()"
+      >
         <img src="../assets/github.svg" class="w-8 h-8 mr-2" alt="github" />
         <p class="text-base font-medium text-white tracking-normal hidden md:contents">
           View Repo
@@ -25,3 +24,13 @@ export default {};
 </template>
 
 <style scoped></style>
+
+<script>
+export default {
+  methods: {
+    repo: function () {
+      window.open("https://github.com/cnaallotey/currencyconverter", "_blank");
+    },
+  },
+};
+</script>

@@ -17,7 +17,10 @@
             <div class="p-3 w-40 mx-auto bg-white rounded-xl shadow-2xl">
               <div class="flex items-center justify-between">
                 <p class="text-sm font-medium text-gray-500">USD</p>
-                <img class="h-6 w-6" src="../assets/usa-flag.svg" />
+                <div class="flex space-x-1">
+                  <img class="h-6 w-6" src="../assets/ghana.svg" />
+                  <img class="h-6 w-6" src="../assets/usa-flag.svg" />
+                </div>
               </div>
               <p class="text-2xl font-semibold mt-1">{{ rates.USD }}</p>
             </div>
@@ -27,7 +30,10 @@
               <div class="p-3 w-40 mx-auto bg-white rounded-xl shadow-2xl">
                 <div class="flex items-center justify-between">
                   <p class="text-sm font-medium text-gray-500">EUR</p>
-                  <img class="h-6 w-6" src="../assets/european-union.svg" />
+                  <div class="flex space-x-1">
+                    <img class="h-6 w-6" src="../assets/ghana.svg" />
+                    <img class="h-6 w-6" src="../assets/european-union.svg" />
+                  </div>
                 </div>
                 <p class="text-2xl font-semibold mt-1">{{ rates.EUR }}</p>
               </div>
@@ -36,7 +42,10 @@
               <div class="p-3 w-40 mx-auto bg-white rounded-xl shadow-2xl">
                 <div class="flex items-center justify-between">
                   <p class="text-sm font-medium text-gray-500">BTC</p>
-                  <img class="h-6 w-6" src="../assets/btc.svg" />
+                  <div class="flex space-x-1">
+                    <img class="h-6 w-6" src="../assets/ghana.svg" />
+                    <img class="h-6 w-6" src="../assets/btc.svg" />
+                  </div>
                 </div>
                 <p class="text-2xl font-semibold mt-1">{{ rates.BTC }}</p>
               </div>
@@ -46,7 +55,10 @@
             <div class="p-3 w-40 mx-auto bg-white rounded-xl shadow-2xl">
               <div class="flex items-center justify-between">
                 <p class="text-sm font-medium text-gray-500">GBP</p>
-                <img class="h-6 w-6" src="../assets/great-britain-flag.svg" />
+                <div class="flex space-x-1">
+                  <img class="h-6 w-6" src="../assets/ghana.svg" />
+                  <img class="h-6 w-6" src="../assets/great-britain-flag.svg" />
+                </div>
               </div>
               <p class="text-2xl font-semibold mt-1">{{ rates.GBP }}</p>
             </div>

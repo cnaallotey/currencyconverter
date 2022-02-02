@@ -14,17 +14,20 @@
             class="w-16 h-16 p-3"
             alt="github"
             @click="github()"
+            title="cnaallotey"
           />
           <img
             src="../assets/linkedin.svg"
             class="w-16 h-16 p-3"
             alt="linkedin"
             @click="linkedin()"
+            title="Charles Allotey"
           /><img
             src="../assets/twitter.svg"
             class="w-16 h-16 p-3"
             alt="twitter"
             @click="twitter()"
+            title="@adotey_"
           />
         </div>
       </div>

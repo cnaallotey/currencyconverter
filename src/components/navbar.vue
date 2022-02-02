@@ -4,7 +4,11 @@
       class="max-w-screen-xl mx-auto flex justify-between items-center px-5 md:px-10 xl:px-0"
     >
       <div class="flex items-center">
-        <img src="../assets/currency.svg" class="w-10 h-10 mr-2 animate-bounce" alt="" />
+        <img
+          src="../assets/currency.svg"
+          class="w-10 h-10 mr-2 animate-bounce shadow-2xl"
+          alt=""
+        />
         <h2
           class="font-extrabold text-lg md:text-xl uppercase text-white cursor-pointer select-none"
         >

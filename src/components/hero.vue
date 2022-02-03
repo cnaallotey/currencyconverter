@@ -22,7 +22,7 @@
                   <img class="h-6 w-6" src="../assets/usa-flag.svg" />
                 </div>
               </div>
-              <p class="text-2xl font-semibold mt-1">{{ rates.USD }}</p>
+              <p class="text-2xl font-semibold mt-1">{{ ghsusd }}</p>
             </div>
           </div>
           <div class="flex w-full items-center justify-between">
@@ -35,19 +35,19 @@
                     <img class="h-6 w-6" src="../assets/european-union.svg" />
                   </div>
                 </div>
-                <p class="text-2xl font-semibold mt-1">{{ rates.EUR }}</p>
+                <p class="text-2xl font-semibold mt-1">{{ ghseur }}</p>
               </div>
             </div>
             <div class="w-full lg:w-auto">
               <div class="p-3 w-40 mx-auto bg-white rounded-xl shadow-2xl">
                 <div class="flex items-center justify-between">
-                  <p class="text-sm font-medium text-gray-500">BTC</p>
+                  <p class="text-sm font-medium text-gray-500">CAD</p>
                   <div class="flex space-x-1">
                     <img class="h-6 w-6" src="../assets/ghana.svg" />
-                    <img class="h-6 w-6" src="../assets/btc.svg" />
+                    <img class="h-6 w-6" src="../assets/canada.svg" />
                   </div>
                 </div>
-                <p class="text-2xl font-semibold mt-1">{{ rates.BTC }}</p>
+                <p class="text-2xl font-semibold mt-1">{{ ghsbtc }}</p>
               </div>
             </div>
           </div>
@@ -60,7 +60,7 @@
                   <img class="h-6 w-6" src="../assets/great-britain-flag.svg" />
                 </div>
               </div>
-              <p class="text-2xl font-semibold mt-1">{{ rates.GBP }}</p>
+              <p class="text-2xl font-semibold mt-1">{{ ghsgbp }}</p>
             </div>
           </div>
         </div>
@@ -77,18 +77,57 @@ export default {
     return {
       accessKey: "95da933ac74de657c8df46d5bba8597f",
       rates: [],
+      ghsusd: "",
+      ghseur: "",
+      ghsbtc: "",
+      ghsgbp: "",
     };
   },
 
   created() {
     axios
       .get(
-        "https://freecurrencyapi.net/api/v2/latest?apikey=3da85ea0-838f-11ec-85e1-1bfef815d72a&base_currency=GHS"
+        "https://freecurrencyapi.net/api/v2/latest?apikey=3da85ea0-838f-11ec-85e1-1bfef815d72a&base_currency=USD"
       )
-      .then((response) => (this.rates = response.data.data));
+      .then(
+        (response) =>
+          (this.ghsusd =
+            Math.round((response.data.data.GHS + Number.EPSILON) * 100) / 100)
+      );
+    axios
+      .get(
+        "https://freecurrencyapi.net/api/v2/latest?apikey=3da85ea0-838f-11ec-85e1-1bfef815d72a&base_currency=GBP"
+      )
+      .then(
+        (response) =>
+          (this.ghsgbp =
+            Math.round((response.data.data.GHS + Number.EPSILON) * 100) / 100)
+      );
+    axios
+      .get(
+        "https://freecurrencyapi.net/api/v2/latest?apikey=3da85ea0-838f-11ec-85e1-1bfef815d72a&base_currency=CAD"
+      )
+      .then(
+        (response) =>
+          (this.ghsbtc =
+            Math.round((response.data.data.GHS + Number.EPSILON) * 100) / 100)
+      );
+    axios
+      .get(
+        "https://freecurrencyapi.net/api/v2/latest?apikey=3da85ea0-838f-11ec-85e1-1bfef815d72a&base_currency=EUR"
+      )
+      .then(
+        (response) =>
+          (this.ghseur =
+            Math.round((response.data.data.GHS + Number.EPSILON) * 100) / 100)
+      );
   },
   computed: {
     getPounds() {},
   },
 };
+
+//Math.round(
+//   (this.fxRates[this.convertRate] * this.capital + Number.EPSILON) * 100
+// ) / 100
 </script>

@@ -123,7 +123,7 @@ export default {
       );
   },
   computed: {
-    getPounds() {},
+    
   },
 };
 

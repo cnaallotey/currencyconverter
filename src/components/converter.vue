@@ -46,7 +46,7 @@
             v-model="convertRate"
           >
             <option
-              v-for="currency in currencies"
+              v-for="currency in filterCurrency"
               :key="currency"
               :value="currency"
               class="p-3 mb-3"
@@ -118,6 +118,11 @@ export default {
     },
     getRate() {
       return this.fxRates[this.convertRate];
+    },
+    filterCurrency() {
+      return this.currencies.filter((currency) => {
+        return !currency.match(this.rateCurrency);
+      });
     },
   },
 };

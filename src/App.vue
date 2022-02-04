@@ -20,7 +20,7 @@ export default {
 </script>
 
 <template>
-  <div class="w-full bg-scroll bg-center bg-hero-image">
+  <div class="w-full bg-scroll bg-cover md:bg-center bg-hero-image">
     <navbar />
     <hero class="relative z-0" />
   </div>

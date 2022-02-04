@@ -1,5 +1,5 @@
 <template>
-  <nav class="w-full bg-slate-900 py-8">
+  <nav class="w-full bg-slate-900 bg-opacity-90 py-8">
     <div
       class="max-w-screen-xl mx-auto flex justify-between items-center px-5 md:px-10 xl:px-0"
     >

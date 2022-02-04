@@ -20,8 +20,13 @@ export default {
 </script>
 
 <template>
-  <navbar />
-  <hero class="relative z-0" />
+  <div
+    class="w-full bg-scroll bg-center"
+    style="background-image: url(./src/assets/city2.jpg)"
+  >
+    <navbar />
+    <hero class="relative z-0" />
+  </div>
   <converter class="relative z-20 -mt-20" />
   <features />
   <foooter />

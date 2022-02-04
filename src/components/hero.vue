@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-slate-900 w-full pb-20">
+  <div class="w-full bg-slate-900 bg-opacity-90 pb-20">
     <div class="max-w-screen-lg mx-auto px-5 md:px-10 xl:px-0">
       <div class="flex flex-col lg:flex-row">
         <div class="w-full lg:w-1/2 py-20 lg:py-52">
@@ -122,9 +122,7 @@ export default {
             Math.round((response.data.data.GHS + Number.EPSILON) * 100) / 100)
       );
   },
-  computed: {
-    
-  },
+  computed: {},
 };
 
 //Math.round(

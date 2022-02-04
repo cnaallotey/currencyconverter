@@ -20,10 +20,7 @@ export default {
 </script>
 
 <template>
-  <div
-    class="w-full bg-scroll bg-center"
-    style="background-image: url(./src/assets/city2.jpg)"
-  >
+  <div class="w-full bg-scroll bg-center bg-hero-image">
     <navbar />
     <hero class="relative z-0" />
   </div>

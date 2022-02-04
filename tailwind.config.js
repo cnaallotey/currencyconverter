@@ -3,7 +3,11 @@ module.exports = {
     './index.html','./src/**/*.{vue,js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'hero-image' : "url('./src/assets/city2.jpg')"
+      }
+    },
   },
   plugins: [],
 }

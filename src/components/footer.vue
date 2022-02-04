@@ -3,8 +3,9 @@
     <div
       class="max-w-screen-xl mx-auto flex flex-col lg:flex-row justify-between items-start lg:items-center px-5 md:px-10 xl:px-0"
     >
-      <p class="text-slate-900 text-base font-normal tracking-normal">
-        2022 UX Geek Inc. Made with ❤️ by Charles Nii Adotey Allotey
+      <p class="text-slate-500 text-base font-medium tracking-normal">
+        2022 UX Geek Inc. Made with <span class="font-normal">❤️ </span> by Charles Nii
+        Adotey Allotey
       </p>
       <div class="flex items-center">
         <p>Follow Me 👍</p>

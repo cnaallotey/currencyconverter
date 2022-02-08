@@ -96,6 +96,14 @@ export default {
       this.rate = this.fxRates[this.rateCurrency];
     },
   },
+  watch: {
+    rateCurrency: function (val) {
+      console.log(val);
+      if (this.convertRate == val) {
+        this.convertRate = this.currencies[this.currencies.indexOf(val) + 1];
+      }
+    },
+  },
 
   created() {
     axios
@@ -110,15 +118,11 @@ export default {
   },
   computed: {
     getConversion() {
-      if (this.convertRate == this.rateCurrency) {
-        return 0;
-      } else {
-        return (
-          Math.round(
-            (this.fxRates[this.convertRate] * this.capital + Number.EPSILON) * 100
-          ) / 100
-        );
-      }
+      return (
+        Math.round(
+          (this.fxRates[this.convertRate] * this.capital + Number.EPSILON) * 100
+        ) / 100
+      );
     },
     getRate() {
       return this.fxRates[this.convertRate];

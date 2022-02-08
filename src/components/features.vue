@@ -124,7 +124,7 @@
             </p>
           </dt>
           <dd class="mt-2 ml-16 text-base text-gray-500">
-            Our rates are updated every 5 minutes to give you the best converisons
+            Our rates are updated every 5 minutes to give you the best conversions.
           </dd>
         </div>
       </dl>

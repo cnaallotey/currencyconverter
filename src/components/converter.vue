@@ -110,11 +110,15 @@ export default {
   },
   computed: {
     getConversion() {
-      return (
-        Math.round(
-          (this.fxRates[this.convertRate] * this.capital + Number.EPSILON) * 100
-        ) / 100
-      );
+      if (this.convertRate == this.rateCurrency) {
+        return 0;
+      } else {
+        return (
+          Math.round(
+            (this.fxRates[this.convertRate] * this.capital + Number.EPSILON) * 100
+          ) / 100
+        );
+      }
     },
     getRate() {
       return this.fxRates[this.convertRate];

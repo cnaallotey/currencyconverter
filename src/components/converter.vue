@@ -115,7 +115,7 @@ export default {
       // }
       if (this.convertRate == val) {
         if (this.currencies.indexOf(val) + 1 == this.currencies.length) {
-          this.convertRate = this.currencies[this.currencies.length - 2];
+          this.convertRate = this.currencies[0];
         } else {
           this.convertRate = this.currencies[this.currencies.indexOf(val) + 1];
         }

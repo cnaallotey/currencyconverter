@@ -98,9 +98,27 @@ export default {
   },
   watch: {
     rateCurrency: function (val) {
-      console.log(val);
+      // console.log(val);
+      // console.log(this.currencies.indexOf(val));
+      // console.log(this.currencies.indexOf("NZD"));
+      // console.log(this.currencies.length);
+      //console.log(this.currencies.length);
+      // if (this.convertRate == val) {
+      //   if (this.currencies[this.currencies.indexOf(val) + 1] != this.currencies.length) {
+      //     this.convertRate = this.currencies[this.currencies.indexOf(val) + 1];
+      //     console.log(this.currencies.indexOf(val));
+      //   } else {
+      //     //this.convertRate = this.currencies[this.currencies.indexOf(val) - 2];
+
+      //     console.log(this.currencies.indexOf(val + "hello"));
+      //   }
+      // }
       if (this.convertRate == val) {
-        this.convertRate = this.currencies[this.currencies.indexOf(val) + 1];
+        if (this.currencies.indexOf(val) + 1 == this.currencies.length) {
+          this.convertRate = this.currencies[this.currencies.length - 2];
+        } else {
+          this.convertRate = this.currencies[this.currencies.indexOf(val) + 1];
+        }
       }
     },
   },

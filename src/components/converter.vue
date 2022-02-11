@@ -64,7 +64,8 @@
     <div class="mt-10 flex flex-col md:flex-row justify-between">
       <div>
         <p class="font-medium text-gray-500">Your Rate</p>
-        <p class="font-semibold text-3xl text-green-500">{{ getRate }}</p>
+        <p class="font-semibold text-3xl text-green-500" v-if="!loading">{{ getRate }}</p>
+        <p class="font-semibold text-3xl text-green-500" v-if="loading">-</p>
       </div>
       <button
         class="px-4 py-3 mt-5 md:mt-0 text-blue-600 text-base bg-blue-50 font-medium border rounded-lg border-blue-500"

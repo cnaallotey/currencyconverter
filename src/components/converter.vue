@@ -4,6 +4,7 @@
   >
     <div
       class="w-full flex flex-col lg:flex-row space-y-5 lg:space-y-0 items-center justify-between"
+      v-if="!loading"
     >
       <div class="w-full lg:w-2/5 border-2 rounded-xl h-max p-5">
         <p class="font-medium text-gray-500">Convert</p>
@@ -22,7 +23,6 @@
             v-model="rateCurrency"
             @change="getRates()"
           >
-            <option value="GHS">GHS</option>
             <option
               v-for="currency in currencies"
               :key="currency"
@@ -58,9 +58,20 @@
         </div>
       </div>
     </div>
-    <div class="mt-10">
-      <p class="font-medium text-gray-500">Your Rate</p>
-      <p class="font-semibold text-3xl text-green-500">{{ getRate }}</p>
+    <div class="w-full flex justify-center" v-if="loading">
+      <img src="../assets/loading.gif" class="w-80 h-80 rounded-full" alt="" />
+    </div>
+    <div class="mt-10 flex flex-col md:flex-row justify-between">
+      <div>
+        <p class="font-medium text-gray-500">Your Rate</p>
+        <p class="font-semibold text-3xl text-green-500">{{ getRate }}</p>
+      </div>
+      <button
+        class="px-4 py-3 text-blue-600 text-base bg-blue-50 font-medium border rounded-lg border-blue-500"
+        @click="switchcurrency()"
+      >
+        Switch Currencies
+      </button>
     </div>
   </div>
 </template>
@@ -71,6 +82,7 @@ import axios from "axios";
 export default {
   data() {
     return {
+      loading: false,
       currencies: [],
       converted: "",
       fxRates: [],
@@ -78,6 +90,7 @@ export default {
       rateCurrency: "GHS",
       capital: 1,
       convertRate: "USD",
+      currencyswitch: "",
     };
   },
   methods: {
@@ -88,12 +101,24 @@ export default {
             this.rateCurrency
         )
         .then(
-          (response) => (this.fxRates = response.data.data)
+          (response) => {
+            this.fxRates = response.data.data;
+            setTimeout(() => {
+              this.loading = false;
+            }, 2000);
+          }
           //console.log(response.data.data)
         );
     },
     getfxRate: function () {
       this.rate = this.fxRates[this.rateCurrency];
+    },
+    switchcurrency: function () {
+      this.currencyswitch = this.convertRate;
+      this.convertRate = this.rateCurrency;
+      this.rateCurrency = this.currencyswitch;
+      this.loading = true;
+      this.getRates();
     },
   },
   watch: {
@@ -124,6 +149,7 @@ export default {
   },
 
   created() {
+    this.loading = true;
     axios
       .get(
         "https://freecurrencyapi.net/api/v2/latest?apikey=3da85ea0-838f-11ec-85e1-1bfef815d72a&base_currency=GHS"
@@ -132,6 +158,9 @@ export default {
         this.currencies = Object.getOwnPropertyNames(response.data.data);
         this.fxRates = response.data.data;
         this.rate = response.data.data.USD;
+        setTimeout(() => {
+          this.loading = false;
+        }, 2000);
       });
   },
   computed: {

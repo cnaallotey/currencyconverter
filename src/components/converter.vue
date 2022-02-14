@@ -149,20 +149,18 @@ export default {
     },
   },
 
-  created() {
+  async created() {
     this.loading = true;
-    axios
-      .get(
-        "https://freecurrencyapi.net/api/v2/latest?apikey=3da85ea0-838f-11ec-85e1-1bfef815d72a&base_currency=GHS"
-      )
-      .then((response) => {
-        this.currencies = Object.getOwnPropertyNames(response.data.data);
-        this.fxRates = response.data.data;
-        this.rate = response.data.data.USD;
-        setTimeout(() => {
-          this.loading = false;
-        }, 2000);
-      });
+    const response = await axios.get(
+      "https://freecurrencyapi.net/api/v2/latest?apikey=3da85ea0-838f-11ec-85e1-1bfef815d72a&base_currency=GHS"
+    );
+
+    this.currencies = Object.getOwnPropertyNames(response.data.data);
+    this.fxRates = response.data.data;
+    this.rate = response.data.data.USD;
+    setTimeout(() => {
+      this.loading = false;
+    }, 2000);
   },
   computed: {
     getConversion() {

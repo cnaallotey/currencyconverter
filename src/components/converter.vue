@@ -115,9 +115,10 @@ export default {
       this.rate = this.fxRates[this.rateCurrency];
     },
     switchcurrency: function () {
-      this.currencyswitch = this.convertRate;
-      this.convertRate = this.rateCurrency;
-      this.rateCurrency = this.currencyswitch;
+      [this.convertRate, this.rateCurrency] = [this.rateCurrency, this.convertRate];
+      // this.currencyswitch = this.convertRate;
+      // this.convertRate = this.rateCurrency;
+      // this.rateCurrency = this.currencyswitch;
       this.loading = true;
       this.getRates();
     },

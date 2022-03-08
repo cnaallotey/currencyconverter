@@ -87,39 +87,39 @@ export default {
   created() {
     axios
       .get(
-        "https://freecurrencyapi.net/api/v2/latest?apikey=3da85ea0-838f-11ec-85e1-1bfef815d72a&base_currency=USD"
+        "https://api.currencyapi.com/v3/latest?apikey=3da85ea0-838f-11ec-85e1-1bfef815d72a&base_currency=USD"
       )
       .then(
         (response) =>
           (this.ghsusd =
-            Math.round((response.data.data.GHS + Number.EPSILON) * 100) / 100)
+            Math.round((response.data.data.GHS.value + Number.EPSILON) * 100) / 100)
       );
     axios
       .get(
-        "https://freecurrencyapi.net/api/v2/latest?apikey=3da85ea0-838f-11ec-85e1-1bfef815d72a&base_currency=GBP"
+        "https://api.currencyapi.com/v3/latest?apikey=3da85ea0-838f-11ec-85e1-1bfef815d72a&base_currency=GBP"
       )
       .then(
         (response) =>
           (this.ghsgbp =
-            Math.round((response.data.data.GHS + Number.EPSILON) * 100) / 100)
+            Math.round((response.data.data.GHS.value + Number.EPSILON) * 100) / 100)
       );
     axios
       .get(
-        "https://freecurrencyapi.net/api/v2/latest?apikey=3da85ea0-838f-11ec-85e1-1bfef815d72a&base_currency=CAD"
+        "https://api.currencyapi.com/v3/latest?apikey=3da85ea0-838f-11ec-85e1-1bfef815d72a&base_currency=CAD"
       )
       .then(
         (response) =>
           (this.ghsbtc =
-            Math.round((response.data.data.GHS + Number.EPSILON) * 100) / 100)
+            Math.round((response.data.data.GHS.value + Number.EPSILON) * 100) / 100)
       );
     axios
       .get(
-        "https://freecurrencyapi.net/api/v2/latest?apikey=3da85ea0-838f-11ec-85e1-1bfef815d72a&base_currency=EUR"
+        "https://api.currencyapi.com/v3/latest?apikey=3da85ea0-838f-11ec-85e1-1bfef815d72a&base_currency=EUR"
       )
       .then(
         (response) =>
           (this.ghseur =
-            Math.round((response.data.data.GHS + Number.EPSILON) * 100) / 100)
+            Math.round((response.data.data.GHS.value + Number.EPSILON) * 100) / 100)
       );
   },
   computed: {},

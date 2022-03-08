@@ -98,11 +98,12 @@ export default {
     getRates: function () {
       axios
         .get(
-          "https://freecurrencyapi.net/api/v2/latest?apikey=3da85ea0-838f-11ec-85e1-1bfef815d72a&base_currency=" +
+          "https://api.currencyapi.com/v3/latest?apikey=3da85ea0-838f-11ec-85e1-1bfef815d72a&base_currency=" +
             this.rateCurrency
         )
         .then(
           (response) => {
+            console.log(response.data.data);
             this.fxRates = response.data.data;
             setTimeout(() => {
               this.loading = false;
@@ -153,12 +154,12 @@ export default {
   async created() {
     this.loading = true;
     const response = await axios.get(
-      "https://freecurrencyapi.net/api/v2/latest?apikey=3da85ea0-838f-11ec-85e1-1bfef815d72a&base_currency=GHS"
+      "https://api.currencyapi.com/v3/latest?apikey=3da85ea0-838f-11ec-85e1-1bfef815d72a&base_currency=GHS"
     );
 
     this.currencies = Object.getOwnPropertyNames(response.data.data);
     this.fxRates = response.data.data;
-    this.rate = response.data.data.USD;
+    this.rate = response.data.data.USD.value;
     setTimeout(() => {
       this.loading = false;
     }, 2000);
@@ -167,12 +168,12 @@ export default {
     getConversion() {
       return (
         Math.round(
-          (this.fxRates[this.convertRate] * this.capital + Number.EPSILON) * 100
+          (this.fxRates[this.convertRate].value * this.capital + Number.EPSILON) * 100
         ) / 100
       );
     },
     getRate() {
-      return this.fxRates[this.convertRate];
+      return this.fxRates[this.convertRate].value;
     },
     filterCurrency() {
       return this.currencies.filter((currency) => {
